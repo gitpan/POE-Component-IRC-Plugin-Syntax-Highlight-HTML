@@ -3,7 +3,7 @@ package POE::Component::IRC::Plugin::Syntax::Highlight::HTML;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use base 'POE::Component::IRC::Plugin::BasePoCoWrap';
 use POE::Component::Syntax::Highlight::HTML;
@@ -49,7 +49,7 @@ sub _make_poco_call {
 
     my $uri = delete $data_ref->{what};
     $uri =~ s/^\s+|\s+\z//g;
-    
+
     $self->{poco}->parse( {
             event       => '_poco_done',
             uri         => $uri,
@@ -79,6 +79,8 @@ END
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 
